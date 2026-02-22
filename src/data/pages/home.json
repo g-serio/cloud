@@ -7,6 +7,41 @@
   },
   "sections": [
     {
+      "id": "soc-section",
+      "type": "arch-layers",
+      "data": {
+        "anchorId": "architecture",
+        "label": "Architecture",
+        "title": "Separation of Concerns",
+        "description": "We enforce a strict boundary between the Engine (us) and the Tenant (you). This prevents vendor lock-in.",
+        "layers": [
+          {
+            "id": "layer-3",
+            "number": "3",
+            "layerLevel": "l2",
+            "title": "The Form Factory",
+            "description": "The Admin UI is not hardcoded. It is generated at runtime by analyzing your Zod schemas. Change the schema, change the UI."
+          },
+          {
+            "id": "layer-2",
+            "number": "2",
+            "layerLevel": "l1",
+            "title": "The Tenant Protocol (TBP)",
+            "description": "Your components live here. They receive pure JSON data. They do not know they are being edited. They just render."
+          },
+          {
+            "id": "layer-1",
+            "number": "1",
+            "layerLevel": "l0",
+            "title": "The Core Engine (@jsonpages/core)",
+            "description": "Handles the React rendering loop, routing, and the Studio iframe injection. It is completely agnostic of your design system."
+          }
+        ],
+        "codeLines": []
+      },
+      "settings": {}
+    },
+    {
       "id": "hero-main",
       "type": "hero",
       "data": {
@@ -45,41 +80,6 @@
             "label": "License"
           }
         ]
-      },
-      "settings": {}
-    },
-    {
-      "id": "soc-section",
-      "type": "arch-layers",
-      "data": {
-        "anchorId": "architecture",
-        "label": "Architecture",
-        "title": "Separation of Concerns",
-        "description": "We enforce a strict boundary between the Engine (us) and the Tenant (you). This prevents vendor lock-in.",
-        "layers": [
-          {
-            "id": "layer-3",
-            "number": "3",
-            "layerLevel": "l2",
-            "title": "The Form Factory",
-            "description": "The Admin UI is not hardcoded. It is generated at runtime by analyzing your Zod schemas. Change the schema, change the UI."
-          },
-          {
-            "id": "layer-2",
-            "number": "2",
-            "layerLevel": "l1",
-            "title": "The Tenant Protocol (TBP)",
-            "description": "Your components live here. They receive pure JSON data. They do not know they are being edited. They just render."
-          },
-          {
-            "id": "layer-1",
-            "number": "1",
-            "layerLevel": "l0",
-            "title": "The Core Engine (@jsonpages/core)",
-            "description": "Handles the React rendering loop, routing, and the Studio iframe injection. It is completely agnostic of your design system."
-          }
-        ],
-        "codeLines": []
       },
       "settings": {}
     },
